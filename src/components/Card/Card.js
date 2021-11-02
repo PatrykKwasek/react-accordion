@@ -8,9 +8,23 @@ export const Card = ({ title, content }) => {
   }
 
   return (
-    <div className='faq-item'>
-      <h4 onClick={handleBlock}>{title}</h4>
-      {isActive && <p>{content}</p>}
+    <div className='faq__question'>
+      <dt>
+        <button
+          aria-expanded="false"
+          aria-controls="faq1_desc"
+          data-qa="faq__question-button"
+          className="faq__question-button "
+          onClick={handleBlock}
+        >
+          {title}
+        </button>
+      </dt>
+      <dd>
+        {isActive &&
+          <p id="faq1_desc" data-qa="faq__desc" className="faq__desc ">{content}</p>
+        }
+      </dd>
     </div>
   )
 }

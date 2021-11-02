@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 
-import { Card } from "../../components/Card/Card";
+import { Accordion } from "../../components/Accordion/Accordion";
+import { Header } from "../../components/Header/Header";
 
-import { rules } from "../../data/rules";
-
-import './Home.scss';
+import './Home.css';
 
 export const Home = () => {
   return (
-    <div>
-      <header>
-        <h2>FAQ</h2>
-      </header>
-
-      {rules.map(item => (
-        <Card
-          key={item.id}
-          title={item.title}
-          content={item.content}
-        />
-      ))}
+    <div className='container'>
+      <Header />
+      <Accordion />
     </div>
   )
 }
