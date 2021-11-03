@@ -1,20 +1,15 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import { Button } from '../../Button/Button';
 
-export const AccordionItem = ({ item }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  const handleToggle = () => {
-    setIsActive(!isActive);
-  }
-
+export const AccordionItem = ({ item, isActive, handleToggle }) => {
+  const { title, content } = item;
   const contentEl = useRef();
 
   return (
     <div className='accordion-item'>
       <Button
-        txt={item.title}
+        txt={title}
         onClick={handleToggle}
         className='title'
       />
@@ -28,7 +23,7 @@ export const AccordionItem = ({ item }) => {
             : { height: "0px" }
         }
       >
-        <div className='content-description'>{item.content}</div>
+        <div className='content-description'>{content}</div>
       </div>
     </div>
   )
