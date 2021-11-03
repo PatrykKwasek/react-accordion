@@ -12,7 +12,7 @@ export const AccordionItem = ({ item }) => {
   const contentEl = useRef();
 
   return (
-    <div>
+    <div className='accordion-item'>
       <Button
         txt={item.title}
         onClick={handleToggle}
@@ -28,7 +28,7 @@ export const AccordionItem = ({ item }) => {
             : { height: "0px" }
         }
       >
-        <span>{item.content}</span>
+        <div className='content-description'>{item.content}</div>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import { rules } from '../../data/rules';
 export const Accordion = () => {
 
   return (
-    <div>
+    <div className='accordion-data'>
       {
         rules.map(item => (
           <AccordionItem

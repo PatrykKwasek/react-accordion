@@ -1,11 +1,28 @@
 .app {
-  .content {
-    height: 0;
-    overflow: hidden;
-    transition: all .4s ease-out;
+  .header {
+    text-align: center;
+  }
 
-    // &.showBlock {
-    //   height: 3rem;
-    // }
+  .accordion-data {
+    border: 1px solid gray;
+    width: 50%;
+    margin: 0 auto;
+
+    .accordion-item {
+      .title {
+        width: 100%;
+        height: 40px;
+      }
+
+      .content {
+        height: 0;
+        overflow: hidden;
+        transition: all .4s ease-out;
+
+        .content-description {
+          padding: 10px;
+        }
+      }
+    }
   }
 }
