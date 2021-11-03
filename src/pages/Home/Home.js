@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Accordion } from "../../components/Accordion/Accordion";
-import { Header } from "../../components/Header/Header";
 
-import './Home.css';
+import './Home.scss';
 
 export const Home = () => {
   return (
-    <div className='container'>
-      <Header />
+    <div className="app">
+      <h2 className='header'>FAQ</h2>
+
       <Accordion />
     </div>
   )

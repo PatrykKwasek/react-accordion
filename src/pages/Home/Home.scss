@@ -1,0 +1,11 @@
+.app {
+  .content {
+    height: 0;
+    overflow: hidden;
+    transition: all .4s ease-out;
+
+    // &.showBlock {
+    //   height: 3rem;
+    // }
+  }
+}

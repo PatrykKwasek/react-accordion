@@ -1,28 +1,35 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
-export const AccordionItem = ({ faq, active, onToggle }) => {
-  const { question, answer } = faq;
+import { Button } from '../../Button/Button';
+
+export const AccordionItem = ({ item }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  }
 
   const contentEl = useRef();
 
   return (
-    <li className={`accordion_item ${active ? "active" : ""}`}>
-      <button className="button" onClick={onToggle}>
-        {question}
-        <span className="control">{active ? "—" : "+"} </span>
-      </button>
+    <div>
+      <Button
+        txt={item.title}
+        onClick={handleToggle}
+        className='title'
+      />
 
       <div
         ref={contentEl}
-        className="answer_wrapper"
+        className='content'
         style={
-          active
+          isActive
             ? { height: contentEl.current.scrollHeight }
             : { height: "0px" }
         }
       >
-        <div className="answer">{answer}</div>
+        <span>{item.content}</span>
       </div>
-    </li>
-  );
+    </div>
+  )
 }
